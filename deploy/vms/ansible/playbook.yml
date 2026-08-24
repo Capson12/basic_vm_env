@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: true
+  gather_facts: true
+  tasks:
+    - name: Ensure system packages are up to date
+      apt:
+        update_cache: true
+        upgrade: dist
+
+    - name: Ensure basic tooling is present
+      apt:
+        name:
+          - curl
+          - vim
+          - htop
+        state: present
