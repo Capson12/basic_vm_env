@@ -18,6 +18,7 @@ variable "vms" {
   type = map(object({
     name = string
     size = string
+    vm-tags = map(string)
   }))
 }
 
