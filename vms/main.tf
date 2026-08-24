@@ -35,7 +35,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   admin_username                  = var.admin_username
   disable_password_authentication = true
   custom_data                     = filebase64("${path.module}/cloud-init.yaml")
-  tags                            = each.value.vm-tags
+  tags                            = each.value.vm_tags
 
   network_interface_ids = [
     azurerm_network_interface.vm_nic[each.key].id,
